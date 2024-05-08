@@ -30,7 +30,15 @@ const CATEGORIES = [
     'PC',
 ];
 
+const fetchProducts = async (company, category, minPrice, maxPrice) => {
+  const url = `https://test-server.com/api/products?company=${company}&category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}`;
+  const response = await axios.get(url);
+  return response.data;
+};
 
+
+app.get('/categories/:categoryname/products', getProductsHandler);
+app.get('/categories/:categoryname/products/:productid', getProductDetailsHandler);
 
 app.listen(9876, () => {
     console.log("Server live on port 9876");
