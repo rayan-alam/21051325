@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const axios = require('axios');
 const app = express();
 
 const BASE_URL = 'https://test-server.com/api';
